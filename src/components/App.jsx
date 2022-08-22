@@ -40,7 +40,7 @@ class App extends Component {
     const positive = this.countPositiveFeedbackPercentage();
 
     return (
-      <Box width={300} ml='auto' mr='auto' border='1px solid' borderColor='gray' pl='20px' pr='20px'>
+      <Box width='300' ml='auto' mr='auto' border='1px solid' borderColor='gray' pl='20px' pr='20px'>
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
             options={Object.keys(this.state)}
