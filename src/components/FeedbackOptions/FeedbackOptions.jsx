@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from 'prop-types';
 import upFirstLetter from "utils/upFirstLetter";
 import { FeedbackBtn } from "./FeedbackOptions.styled";
@@ -17,6 +16,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 
 FeedbackOptions.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onLeaveFeedback: PropTypes.func.isRequired,
 };
 
 export default FeedbackOptions;
