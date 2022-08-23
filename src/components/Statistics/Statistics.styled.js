@@ -12,7 +12,10 @@ export const StatUnit = styled.p`
     padding-bottom: 4px;
     font-size: 16px;
     line-height: 1.25;
-    border-bottom: 1px dotted gray;
+    :not(:last-of-type){
+        border-bottom: 1px dotted gray;
+    }
+    
 `;
 
 export const StatTotal = styled.span`
