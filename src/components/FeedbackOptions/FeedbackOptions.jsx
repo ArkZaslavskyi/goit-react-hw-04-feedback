@@ -3,20 +3,25 @@ import upFirstLetter from "utils/upFirstLetter";
 import { FeedbackBtn } from "./FeedbackOptions.styled";
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-    return options.map(option =>
+    return options.map(option => {
+        return (
         <FeedbackBtn
             type="button"
             key={option}
             name={option}
-            onClick={onLeaveFeedback}
+            onClick={onLeaveFeedback[option]}
         >
             {upFirstLetter(option)}
-        </FeedbackBtn>)
+        </FeedbackBtn>)})
 };
 
 FeedbackOptions.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string).isRequired,
-    onLeaveFeedback: PropTypes.func.isRequired,
+    onLeaveFeedback: PropTypes.shape({
+        neutral: PropTypes.func.isRequired,
+        good: PropTypes.func.isRequired,
+        bad: PropTypes.func.isRequired,
+    }).isRequired,
 };
 
 export default FeedbackOptions;
